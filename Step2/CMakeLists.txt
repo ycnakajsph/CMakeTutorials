@@ -11,11 +11,19 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # to the source code
 configure_file(TutorialConfig.h.in TutorialConfig.h)
 
+# adding the subdirectory with lib CMakeList.txt
+add_subdirectory(MathFunctions)
+
 # add the executable
 add_executable(Tutorial tutorial.cxx)
+
+# link the main target with the lib from MathFunctions
+target_link_libraries(Tutorial PUBLIC MathFunctions)
 
 # add the binary tree to the search path for include files
 # so that we will find TutorialConfig.h
 target_include_directories(Tutorial PUBLIC
                            "${PROJECT_BINARY_DIR}"
+                           "${PROJECT_SOURCE_DIR}/MathFunctions"
                            )
+
