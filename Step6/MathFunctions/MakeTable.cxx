@@ -6,7 +6,7 @@
 int main(int argc, char* argv[])
 {
   // make sure we have enough arguments
-  if (argc < 2) {
+  if (argc < 3) {
     return 1;
   }
 
@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
   const bool fileOpen = fout.is_open();
   if (fileOpen) {
     fout << "double sqrtTable[] = {" << std::endl;
-    for (int i = 0; i < 10; ++i) {
+    for (int i = 0; i < std::stod(argv[2]); ++i) {
       fout << sqrt(static_cast<double>(i)) << "," << std::endl;
     }
     // close the table with a zero

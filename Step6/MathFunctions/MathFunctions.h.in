@@ -1,0 +1,2 @@
+#cmakedefine TableSize "@TableSize@"
+double mysqrt(double x);
