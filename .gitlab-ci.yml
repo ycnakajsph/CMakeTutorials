@@ -27,5 +27,5 @@ release-project:
     - cpack -G DEB
   artifacts:
     paths:
-      - ./Tutorial-*-Linux.deb
+      - ./Step7_build/Tutorial-*-Linux.deb
 
